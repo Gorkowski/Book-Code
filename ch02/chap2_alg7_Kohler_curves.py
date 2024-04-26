@@ -1,4 +1,4 @@
-# Import the libraries we will be using
+#%% Import the libraries we will be using
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize_scalar
@@ -27,8 +27,11 @@ molar_vol_solute = (molar_weight_solute*1.0e-3) / density_solute
 molar_vol_water = molar_weight_water*1.0e-3 / density_water
 diss_num = 3.0
 
-option = 3
+#%%
+option = 2
+stoich_coeff = 3
 
+#%%
 if option == 1:
     #1) For 3 sizes, calculate and plot the equilibrium curve to visualise the critical
     # droplet diameter of a single component aerosol particle
@@ -187,3 +190,5 @@ elif option == 3:
     ax.set_xlabel('Droplet diamater (m)')
     plt.legend()
     plt.show()
+
+# %%

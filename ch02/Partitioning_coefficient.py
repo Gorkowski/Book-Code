@@ -1,3 +1,4 @@
+#%%
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -48,3 +49,5 @@ plt.hlines(0.5, log_COA[0], log_COA[99], colors='k', linestyles='dashed')
 plt.xlabel(r"Log10($C_{OA}$)", size=14)
 plt.ylabel(r'Partitioning coefficient $\varepsilon _{i}$', size=14)
 plt.show()
+
+# %%

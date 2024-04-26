@@ -1,7 +1,8 @@
+#%%
 import numpy as np
 import matplotlib.pyplot as plt
 
-# --- Physical constants --------------------------------------------
+#%% --- Physical constants --------------------------------------------
 Lv_water_vapour=2.5e3 # Latent heat of vapourisation of water [J/g]
 Rv=461.0 #Individual gas constant of water vapour [J/Kg.K]
 Ra=287.0 #Gas constant for dry air [J/Kg.K]
@@ -45,3 +46,5 @@ plt.hlines(0.5, log_COA[0], log_COA[99], colors='k', linestyles='dashed')
 plt.xlabel(r"Log10($C_{OA}$)", size=14)
 plt.ylabel(r'Partitioning coefficient $\varepsilon _{i}$', size=14)
 plt.show()
+
+# %%

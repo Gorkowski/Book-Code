@@ -1,3 +1,4 @@
+# %%
 #!/usr/bin/python3
 # import physical constants and the properties
 # of chemical species
@@ -38,6 +39,10 @@ c = np.zeros((2+num_vbs_species,n.shape[0]))
 
 # concentration of sulfate [mol/m3]
 c[1,:] = n * np.pi/6.0*d**3 * rho['SO4'] / M['SO4']
+
+# %% --- Set up the gas phase concentrations ----------------------------
+model_setup = 3
+RH0 = 95 # relative humidity [%]
 
 # set the gas phase concentrations for dry aerosol cases
 if model_setup <= 2:
@@ -174,8 +179,10 @@ for j in remapping_scheme:
 
     # find the index of the smallest activated bin
     # at the end of the simulation
-    #smallest_activated=find_activated(solution[-1][:])
+    smallest_activated=find_activated(solution[-1][:])
     # plot different parameters
     #plot_variables(solution, smallest_activated)
     
 plt.show()
+
+# %%
