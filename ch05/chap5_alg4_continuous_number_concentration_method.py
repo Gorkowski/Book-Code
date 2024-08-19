@@ -13,7 +13,7 @@ def CoagulationRates(C):
     N_bin = len(C)
     r = np.zeros(N_bin)
     bin_masses = np.arange(1,N_bin+1)
-    for ind_k,k in enumerate(bin_sizes):
+    for ind_k,k in enumerate(bin_masses):
         # Destruction
         for ind_l,l in enumerate(bin_masses):
             K = kernel_helper.GetKernel((k)*mb,(l)*mb)
