@@ -13,7 +13,7 @@ def CoagulationRates(C):
     N_bin = len(C)
     r = np.zeros(N_bin)
     bin_masses = np.arange(1,N_bin+1)
-    for ind_k,k in enumerate(bin_sizes):
+    for ind_k,k in enumerate(bin_masses):
         # Destruction
         for ind_l,l in enumerate(bin_masses):
             K = kernel_helper.GetKernel((k)*mb,(l)*mb)
@@ -25,7 +25,7 @@ def CoagulationRates(C):
 
     return(r)
 
-max_size = 8 
+max_size = 10
 fig = plt.figure(figsize=(4.5,3.5))
 axes = fig.add_subplot(1,1,1)
 pos = axes.get_position()

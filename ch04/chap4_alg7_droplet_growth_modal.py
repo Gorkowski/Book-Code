@@ -178,8 +178,8 @@ def dy_dt(array,t):
                                    # only condensation is being considered.
     dy_dt_array[ nchem + 1 ] = dm2_dt
     dy_dt_array[ nchem + 2 ] = dm3_dt
-   
-       return dy_dt_array
+
+    return dy_dt_array
 
 
 
@@ -244,17 +244,13 @@ def dy_dt_ozone(array,t):
     density = 1.0 / (np.sum( mass_fractions_array / density_array ))  # [kg m-3]
 
     #3) Calculate Diameter and sigma from the three moments above. 
-    sigmag1 = ( 1.0/3.0 * np.log( M0 ) - np.log( M2 )
-	  + 2.0/3.0 * np.log( M3 ) ) **0.5
-    Dp = ( M3 / ( M0 * np.exp( 4.5 * sigmag1**2 ) ) )
-	   **(1.0/3.0)  # [m]
+    sigmag1 = ( 1.0/3.0 * np.log( M0 ) - np.log( M2 ) + 2.0/3.0 * np.log( M3 ) ) **0.5
+    Dp = ( M3 / ( M0 * np.exp( 4.5 * sigmag1**2 ) ) )**(1.0/3.0)  # [m]
     M1 = M0 * Dp * np.exp( 0.5 * sigmag1**2 )   # [m m-3]
 
     #4) Free Molecular Regime Calculation for the 2nd and 3rd moments
-    Ifm2 = np.pi * alpha_d_org * mean_them_vel
-	  / 4. * M1  # [ m2 m-3 s-1]
-    Ifm3 = np.pi * alpha_d_org * mean_them_vel
-	  / 4. * M2  # [ m3 m-3 s-1]
+    Ifm2 = np.pi * alpha_d_org * mean_them_vel/ 4. * M1  # [ m2 m-3 s-1]
+    Ifm3 = np.pi * alpha_d_org * mean_them_vel/ 4. * M2  # [ m3 m-3 s-1]
     
     #5) Continuum Regime Calculation for the 2nd and 3rd Moments
     Ict2 = 2.0 * np.pi * DStar_org[:]*1.0e-4 * M0   # [m2 s-1 m-3]

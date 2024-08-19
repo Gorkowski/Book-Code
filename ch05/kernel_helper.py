@@ -14,7 +14,7 @@ def GetKernel(m1,m2):
     den_j = 1000.0 #000.0 # kg m^-3
 
     boltz = 1.3806505e-23
-    pressure = 1e5
+    pressure = 101325.0 # Pa
     univ_gas_const =  8.314472e0
     temp = 273.15 + 25.0 # K 
     MW_air =  2.89644e-2  # kg mole^-1
@@ -34,20 +34,21 @@ def GetKernel(m1,m2):
     rad_i = ((3.0/(4.0 * np.pi)) * vol_i)**(1.0/3.0)
     Rme_i = rad_i
     knud      = gasfreepath/Rme_i
-    cunning   = 1.0 + knud*(1.249 + 0.42*np.exp(-0.87/knud))
+    cunning   = 1.0 + knud*(1.249 + 0.42*np.exp(-1.1/knud))
     diffus_i  = (boltz * temp * cunning) / \
          (6.0 * np.pi * Rme_i * viscosd)
     speedsq_i = 8.0 * boltz * temp / (np.pi * den_i * vol_i)
+
     freepath  = 8.0*diffus_i/(np.pi*np.sqrt(speedsq_i))
     tmp1      = (2.0*Rme_i + freepath)**3
     tmp2      = (4.0*Rme_i*Rme_i + freepath*freepath)**1.5
     deltasq_i = ( (tmp1-tmp2)/(6.0*Rme_i*freepath) - 2.0*Rme_i )**2
 
-    vol_j = m2 / den_j 
+    vol_j = m2 / den_j
     rad_j = ((3.0/(4.0 * np.pi)) * vol_j)**(1.0/3.0)
     Rme_j = rad_j
     knud      = gasfreepath/Rme_j
-    cunning   = 1.0 + knud*(1.249 + 0.42*np.exp(-0.87/knud))
+    cunning   = 1.0 + knud*(1.249 + 0.42*np.exp(-1.1/knud))
     diffus_j  = (boltz * temp * cunning) / \
         (6.0 * np.pi * Rme_j * viscosd)
     speedsq_j = 8.0 * boltz * temp / (np.pi * den_j * vol_j)

@@ -30,7 +30,7 @@ remapping_scheme=['hybrid-bin','quasi-stationary','moving-center','flat-top','fu
 # 2 = semivolatile organics condensation + nucleation
 # 3 = water condensation
 # 4 = water and semivolatile organics condensation
-model_setup = 1
+model_setup = 4
 
 # ODE parameters
 rtol=1.e-9           # Relative tolerance for VODE
