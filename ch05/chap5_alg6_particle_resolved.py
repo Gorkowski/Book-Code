@@ -197,7 +197,7 @@ axes.set_xlabel('Particle diameter (m)')
 axes.set_ylabel('dN/dlogD')
 # plt.yscale('log')
 axes.set_xscale('log')
-axes.set_ylim([0,1e11])
+axes.set_ylim([0,1e10])
 axes.set_xlim([1e-9,1e-6])
 
 # # A = np.loadtxt('file.txt')
