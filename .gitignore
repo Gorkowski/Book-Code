@@ -1,6 +1,8 @@
 # ignore .DS_Store on macs
 .DS_Store
 
+*.pdf
+
 # ignore local mkdocs source folder
 *Source-Code*
 .cache/
