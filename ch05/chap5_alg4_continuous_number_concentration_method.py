@@ -1,3 +1,4 @@
+# %%
 import numpy as np
 import kernel_helper
 import matplotlib.pyplot as plt
@@ -25,6 +26,7 @@ def CoagulationRates(C):
 
     return(r)
 
+# %%
 max_size = 10
 fig = plt.figure(figsize=(4.5,3.5))
 axes = fig.add_subplot(1,1,1)
